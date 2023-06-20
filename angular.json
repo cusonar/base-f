@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/tui-grid/dist/tui-grid.min.css",
               "node_modules/metro4/build/css/metro-all.min.css",
               "src/styles.scss"
             ],
