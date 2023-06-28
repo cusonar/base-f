@@ -1,0 +1,7 @@
+<h2 class="ui header">
+  <i class="icon" [ngClass]="header.icon" *ngIf="header.icon"></i>
+  <div class="content">
+    {{header.title}}
+    <div class="sub header" *ngIf="header.subTitle">{{header.subTitle}}</div>
+  </div>
+</h2>

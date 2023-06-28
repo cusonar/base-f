@@ -31,11 +31,13 @@
             ],
             "styles": [
               "node_modules/tui-grid/dist/tui-grid.min.css",
-              "node_modules/metro4/build/css/metro-all.min.css",
+              "node_modules/fomantic-ui/dist/semantic.min.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/metro4/build/js/metro.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery.fancytree/dist/jquery.fancytree-all-deps.min.js",
+              "node_modules/fomantic-ui/dist/semantic.min.js"
             ]
           },
           "configurations": {
