@@ -1,14 +1,20 @@
 <div class="ui top fixed menu">
-  <div class="header item" style="width: 210px; justify-content: center;">
-    <img src="/images/logo.png">
+  <div class="header item" style="width: 210px; justify-content: center; padding: 0;">
+    <img [src]="logo" alt="LOGO" style="flex: 0.6;">
   </div>
   <div class="right menu">
-    <a class="item">Features</a>
-    <a class="item">Testimonials</a>
-    <a class="item">Sign-in</a>
+    <a id="user-info" class="item" style="padding: 0 12px;">
+      <img class="ui avatar image" [src]="userImage" alt="USER Image">
+      <span>{{username}}</span>
+    </a>
+    <div class="ui popup middle aligned">
+      <div class="header">Last Login</div>
+      <div class="description">{{lastLoginTime | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+      <div class="ui mini button" routerLink="logout">Logout</div>
+    </div>
   </div>
 </div>
-<div class="ui left fixed vertical menu" style="top: 41px; height: calc(100vh - 41px);">
+<div class="ui left fixed vertical large menu" style="top: 41px; height: calc(100vh - 41px); width: 210px;">
   <div class="item" *ngFor="let menu of sideMenus">
     <div class="header">{{menu.name}}</div>
     <div class="menu">

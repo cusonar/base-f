@@ -21,6 +21,8 @@ export class IndexComponent implements OnInit {
         {url: 'bar4', name: 'bar4', icon: ''},
       ]}
   ];
+  lastLoginDate = new Date();
+
 
   ngOnInit(): void {
   }

@@ -1,50 +1,30 @@
-<div class="h-vh-100 d-flex flex-justify-center flex-align-center">
-  <div class="login-box">
-    <form class="bg-white p-4">
-      <img src="images/p-120x120.png" class="place-right mt-4-minus mr-6-minus">
-      <h1 class="mb-0">Login</h1>
-      <div class="text-muted mb-4">Sign in to start your session</div>
-      <div class="form-group">
-        <div class="input required"><input #username type="text" data-role="input" placeholder="ID"
-                                           data-append="<span class='mif-user'>" data-validate="required" class=""
-                                           data-role-input="true">
-          <div class="button-group">
-            <button (click)="onClickClean(username)" class="button input-clear-button" tabindex="-1" type="button">
-              <span class="default-icon-cross"></span>
-            </button>
-          </div>
-          <div class="append">
-            <span class="mif-user"></span>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <img src="assets/images/logo.png" class="image">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="id" placeholder="ID">
           </div>
         </div>
-        <span class="invalid_feedback">Please enter a valid ID</span>
-      </div>
-      <div class="form-group">
-        <div class="input required">
-          <input #password type="password" data-role="input" placeholder="Password" data-append="<span class='mif-key'>"
-                 data-validate="required" class="" data-role-input="true">
-          <div class="button-group">
-            <button (click)="onClickClean(password)" class="button input-clear-button" tabindex="-1" type="button">
-              <span class="default-icon-cross"></span>
-            </button>
-            <button (click)="onClickReveal(password)" class="button input-reveal-button" tabindex="-1" type="button">
-              <span class="default-icon-eye fg-blue"></span>
-            </button>
-          </div>
-          <div class="append">
-            <span class="mif-key"></span>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
           </div>
         </div>
-        <span class="invalid_feedback">Please enter a password</span>
+        <div class="ui fluid large teal submit button">Login</div>
       </div>
-      <div class="form-group d-flex flex-align-center flex-justify-between">
-        <label class="checkbox transition-on"><input type="checkbox" data-role="checkbox" data-caption="Remember Me"
-                                                     data-role-checkbox="true" class="">
-          <span class="check"></span>
-          <span class="caption">Remember Me</span>
-        </label>
-        <button class="button primary">Sign In</button>
-      </div>
+
+      <div class="ui error message"></div>
+
     </form>
   </div>
 </div>

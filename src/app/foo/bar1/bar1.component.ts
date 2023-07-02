@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import Grid from 'tui-grid';
 import {Header} from "../../../../projects/cu-lib/src/lib/interface/header.interface";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-bar1',
@@ -22,19 +23,19 @@ export class Bar1Component implements AfterViewInit {
     {name: 'abc3'},
     {name: 'abc4'},
   ];
+  filteredData: any = [];
 
   ngAfterViewInit(): void {
     this.grid = new Grid({
       el: this.myGrid.nativeElement,
-      data: this.data,
+      data: _.cloneDeep(this.data),
       scrollX: false,
       scrollY: false,
       rowHeaders: ['rowNum'],
       columns: [
         {
           header: 'Name',
-          name: 'name',
-          filter: 'text'
+          name: 'name'
         },
         {
           header: 'Artist',
@@ -58,9 +59,12 @@ export class Bar1Component implements AfterViewInit {
   }
 
   onFilterKeyup(value: string) {
-    console.log(value);
-    this.grid.filter('name', [{code: 'eq', value: value}]);
-    console.log(this.grid.getFilteredData());
-    this.grid.resetData(this.grid.getFilteredData());
+    this.filteredData = _.cloneDeep(this.data.filter((d: any) => {
+      for (let key in d) {
+        if (d[key].indexOf && d[key].indexOf(value) > -1) return true;
+      }
+      return false;
+    }));
+    this.grid.resetData(this.filteredData);
   }
 }

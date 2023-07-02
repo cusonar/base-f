@@ -11,6 +11,7 @@ import { Bar3Component } from './foo2/bar3/bar3.component';
 import { Bar4Component } from './foo2/bar4/bar4.component';
 import {FormsModule} from "@angular/forms";
 import {CuLibModule} from "../../projects/cu-lib/src/lib/cu-lib.module";
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CuLibModule} from "../../projects/cu-lib/src/lib/cu-lib.module";
     Bar1Component,
     Bar2Component,
     Bar3Component,
-    Bar4Component
+    Bar4Component,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
